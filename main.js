@@ -27,7 +27,6 @@ ProtoGraph.Card.toStoryLink.prototype.renderLaptop = function (data) {
       optionalConfigURL={this.options.configuration_url}
       optionalConfigSchemaURL={this.options.configuration_schema_url}
       mode={this.mode}
-      clickCallback={this.options.onClickCallback}
       ref={(e) => {
         this.containerInstance = this.containerInstance || e;
       }}/>,
@@ -43,7 +42,6 @@ ProtoGraph.Card.toStoryLink.prototype.renderMobile = function (data) {
       optionalConfigURL={this.options.configuration_url}
       optionalConfigSchemaURL={this.options.configuration_schema_url}
       mode={this.mode}
-      clickCallback={this.options.onClickCallback}
       ref={(e) => {
         this.containerInstance = this.containerInstance || e;
       }}/>,

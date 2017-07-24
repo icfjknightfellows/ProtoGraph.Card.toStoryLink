@@ -3,8 +3,7 @@
   <head>
     <meta charset = "UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Explainer Card</title>
-    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> -->
+    <title>StoryLink Card</title>
     <link rel="stylesheet" type="text/css" href="card.min.css">
     <script type="text/javascript">
       var siteId, origin, base_url;
@@ -46,12 +45,12 @@
 
   </head>
   <body>
-    <div id="explainer-div"></div>
+    <div id="story-link-div"></div>
     <script src="https://d2m6lzru8erw1k.cloudfront.net/lib/oasis.min.js"></script>
     <!-- // <script src="lib/oasis.min.js"></script> -->
     <script src = "card.min.js"></script>
     <script type="text/javascript">
-    var x = new ProtoGraph.Card.toExplain();
+    var x = new ProtoGraph.Card.toStoryLink();
     function findGetParameter(parameterName) {
         var result = null,
             tmp = [],
@@ -79,15 +78,15 @@
               schema_base_path = base_url + "/" + schema_id;
 
             x.init({
-              selector: document.querySelector('#explainer-div'),
+              selector: document.querySelector('#story-link-div'),
               data_url: data_base_path + "/data.json",
               schema_url: schema_base_path + "/schema.json",
               configuration_url: data_base_path + "/view_cast.json",
-              configuration_schema_url: 'configuration_schema.json',
-              onClickCallback: function () {
-                let h = x.getData().height;
-                that.send('resize_frame', {width: '100%', height: h})
-              }
+              configuration_schema_url: 'configuration_schema.json'
+              // data_url: "sample.json",
+              // schema_url: "schema.json",
+              // configuration_url: "configuration_sample.json",
+              // configuration_schema_url: 'configuration_schema.json'
             })
             renderWithMode(mode);
           }
